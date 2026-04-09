@@ -1,0 +1,238 @@
+.adminLayout {
+  font-family: var(--font-lexend), sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--card);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+  }
+}
+
+.sidebarHeader {
+  margin-bottom: 2rem;
+  
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  
+  p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    word-break: break-all;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: var(--primary);
+    color: white;
+  }
+}
+
+.logoutWrapper {
+  margin-top: auto;
+  
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  color: #ef4444;
+  font-weight: 500;
+  transition: all 0.2s;
+  
+  &:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+  }
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1000px;
+  overflow-y: auto;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+}
+
+.tableContainer {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  th {
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.itemImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.25rem;
+  object-fit: cover;
+  background-color: var(--border);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.formGrid {
+  background-color: var(--card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+
+  input, select, textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--background);
+    color: var(--foreground);
+    outline: none;
+    font-family: var(--font-lexend), sans-serif;
+
+    &:focus {
+      border-color: var(--primary);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+}
