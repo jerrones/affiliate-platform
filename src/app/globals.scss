@@ -1,0 +1,71 @@
+:root {
+  /* Cores Padrão - Tema Claro (Quero Notebook) */
+  --background: #faf9f6; /* Bege super claro/areia */
+  --foreground: #1e293b;
+  --primary: #0D4B75; /* Azul Oceano da logo */
+  --primary-hover: #166296;
+  --secondary: #DE6B2A; /* Laranja da logo */
+  --secondary-hover: #f07b3a;
+  
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text-muted: #475569;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(13 75 117 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(13 75 117 / 0.1), 0 2px 4px -2px rgb(13 75 117 / 0.1);
+  --radius: 0.75rem;
+  
+  --amazon-color: #ff9900;
+  --ml-color: #ffe600;
+  --ml-text: #2d3277;
+}
+
+[data-theme='dark'] {
+  /* Cores Escuras */
+  --background: #0b1120;
+  --foreground: #f8fafc;
+  --primary: #2695C3; /* Azul Claro da logo para destacar bem no escuro */
+  --primary-hover: #38bdf8;
+  --secondary: #DE6B2A; 
+  --secondary-hover: #f97316;
+  
+  --card: #1e293b;
+  --border: #334155;
+  --text-muted: #94a3b8;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  
+  --amazon-color: #f59e0b;
+  --ml-color: #facc15;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-domine), sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-lexend), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-lexend), sans-serif; /* Lighter/cleaner font for buttons */
+}
