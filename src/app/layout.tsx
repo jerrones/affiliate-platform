@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lexend, Domine } from "next/font/google"; 
 import "./globals.scss";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Analytics } from "@vercel/analytics/next"
 
 const lexend = Lexend({
   variable: "--font-lexend",
@@ -33,6 +34,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
