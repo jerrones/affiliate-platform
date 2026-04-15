@@ -11,7 +11,7 @@ export default async function Home() {
   const { data: products } = await supabase
     .from("products")
     .select("*")
-    .order("created_at", { ascending: false });
+    .order("updated_at", { ascending: false });
 
   return (
     <>
