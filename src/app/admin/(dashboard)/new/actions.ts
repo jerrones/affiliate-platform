@@ -20,8 +20,8 @@ export async function addProduct(formData: FormData) {
   // Converter preço
   const current_price = parseFloat(current_priceRaw.replace(',', '.'))
 
-  // 2. Inserir na tabela 'products'
-  const { error: productError } = await supabase.from("products").insert({
+  // 2. Inserir ou atualizar na tabela 'products'
+  const { error: productError } = await supabase.from("products").upsert({
     nameId,
     title,
     description,
@@ -30,12 +30,13 @@ export async function addProduct(formData: FormData) {
     affiliateUrl,
     category,
     store
+  }, {
+    onConflict: 'nameId'
   })
 
   if (productError) {
-    console.error("Erro ao inserir produto:", productError)
-    // Para simplificar, num cenário real retornaríamos o erro para o UI
-    throw new Error("Erro ao criar produto. Verifique se o nameId já existe.")
+    console.error("Erro ao inserir/atualizar produto:", productError)
+    throw new Error("Erro ao salvar produto.")
   }
 
   // 3. Inserir na tabela 'price_history' via Trigger ou Manualmente (faremos manualmenrte por agora)
